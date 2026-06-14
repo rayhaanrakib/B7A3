@@ -182,7 +182,7 @@ VALUES
 SELECT
   match_id,
   fixture,
-  base_ticket_price
+  round(base_ticket_price) as base_ticket_price
 FROM
   matches
 WHERE
@@ -221,7 +221,7 @@ SELECT
   booking_id,
   full_name,
   fixture,
-  total_cost
+  round(total_cost) as total_cost
 FROM
   bookings AS b
   INNER JOIN users AS u ON b.user_id = u.user_id
@@ -244,7 +244,7 @@ ORDER BY
 SELECT
   booking_id,
   match_id,
-  total_cost
+  round(total_cost) as total_cost
 FROM
   bookings
 WHERE
@@ -260,7 +260,7 @@ WHERE
 SELECT
   match_id,
   fixture,
-  base_ticket_price
+  round(base_ticket_price) as base_ticket_price
 FROM
   matches
 ORDER BY
